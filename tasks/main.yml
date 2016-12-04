@@ -8,7 +8,7 @@
 
 - name: add jenkins lts repository
   apt_repository:
-    repo: "deb https://pkg.jenkins.io/debian-stable binary/"
+    repo: "deb http://pkg.jenkins.io/debian-stable binary/"
     state: present
 
 - name: update repository cache
