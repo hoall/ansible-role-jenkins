@@ -1,0 +1,22 @@
+---
+# tasks file for jenkins
+
+- name: add apt key from jenkins.io lts
+  apt_key:
+    url: "https://pkg.jenkins.io/debian-stable/jenkins.io.key"
+    state: present
+
+- name: add jenkins lts repository
+  apt_repository:
+    url: "deb https://pkg.jenkins.io/debian-stable binary/"
+    state: present
+
+- name: update repository cache
+  apt:
+    update_cache: yes
+
+- name: install jenkins
+  package:
+    name: jenkins
+    state: present
+
